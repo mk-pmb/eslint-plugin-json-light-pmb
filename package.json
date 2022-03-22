@@ -1,14 +1,13 @@
-{
-  "name": "eslint-plugin-json-light",
+{ "name": "eslint-plugin-json-light-pmb",
   "version": "1.0.3",
-  "description": "Light ESLint plugin for JSON validating",
+  "description": "(2022 maintenance fork) Light ESLint plugin for JSON validating",
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha 'test/**/*.spec.js'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/locomote/eslint-plugin-json-light.git"
+    "url": "git+https://github.com/mk-pmb/eslint-plugin-json-light-pmb.git"
   },
   "keywords": [
     "eslint",
@@ -24,10 +23,13 @@
     "url": "http://www.locomote.com.au"
   },
   "license": "ISC",
+  "contributors": [
+    "M.K. (https://github.com/mk-pmb)"
+  ],
   "bugs": {
-    "url": "https://github.com/locomote/eslint-plugin-json-light/issues"
+    "url": "https://github.com/mk-pmb/eslint-plugin-json-light-pmb/issues"
   },
-  "homepage": "https://github.com/locomote/eslint-plugin-json-light#readme",
+  "homepage": "https://github.com/mk-pmb/eslint-plugin-json-light-pmb#readme",
   "dependencies": {
     "jsonlint": "^1.6.3"
   },
@@ -39,5 +41,7 @@
     "eslint-plugin-mocha": "^5.1.0",
     "mocha": "^5.2.0",
     "require-directory": "^2.1.1"
-  }
+  },
+
+  "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
 }

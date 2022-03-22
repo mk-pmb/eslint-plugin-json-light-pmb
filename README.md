@@ -1,4 +1,4 @@
-# eslint-plugin-json-light
+# eslint-plugin-json-light-pmb
 Because eslint-plugin-json install is too heavy (phantomjs download, ~22MB) 😒
 
 ## Installation
@@ -6,10 +6,7 @@ Because eslint-plugin-json install is too heavy (phantomjs download, ~22MB) 😒
 #### ESLint
 ```bash
 npm i eslint --save-dev
-```
-
-```bash
-npm i eslint-plugin-json-light --save-dev
+npm i eslint-plugin-json-light-pmb --save-dev
 ```
 
 If you installed ESLint package globally - you should also install this plugin globally
