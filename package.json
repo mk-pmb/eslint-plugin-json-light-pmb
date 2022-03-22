@@ -1,0 +1,43 @@
+{
+  "name": "eslint-plugin-json-light",
+  "version": "1.0.3",
+  "description": "Light ESLint plugin for JSON validating",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.spec.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/locomote/eslint-plugin-json-light.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin",
+    "json",
+    "eslint-plugin-json",
+    "eslint-plugin-json-light"
+  ],
+  "author": {
+    "name": "Locomote IP Pty Ltd",
+    "email": "devs@locomote.com.au",
+    "url": "http://www.locomote.com.au"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/locomote/eslint-plugin-json-light/issues"
+  },
+  "homepage": "https://github.com/locomote/eslint-plugin-json-light#readme",
+  "dependencies": {
+    "jsonlint": "^1.6.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-mocha": "^5.1.0",
+    "mocha": "^5.2.0",
+    "require-directory": "^2.1.1"
+  }
+}
