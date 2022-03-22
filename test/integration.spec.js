@@ -31,7 +31,7 @@ describe('Integration', () => {
           message: 'Invalid JSON: expected \'STRING\', \'}\' got ,',
           line: 1,
           column: 0,
-          source: undefined,
+          source: '<input>',
         },
       ],
     );
