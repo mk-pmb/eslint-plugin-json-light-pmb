@@ -1,6 +1,11 @@
+'use strict';
+/* eslint-env mocha */
+
 const { expect } = require('chai');
 const { Linter } = require('eslint');
-const plugin = require('./../lib/index');
+
+const plugin = require('../lib/index.js');
+const { unexpect } = require('./errUtil.js');
 
 
 describe('Integration', () => {
@@ -28,7 +33,7 @@ describe('Integration', () => {
         {
           ruleId: 'valid-json',
           severity: 2,
-          message: 'Invalid JSON: expected \'STRING\', \'}\' got ,',
+          message: unexpect("'STRING', '}'", ','),
           line: 1,
           column: 0,
           source: '<input>',

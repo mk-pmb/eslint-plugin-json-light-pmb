@@ -1,6 +1,14 @@
+'use strict';
+/* eslint-env mocha */
+
 const { expect } = require('chai');
 
-const plugin = require('./../lib/index');
+const plugin = require('../lib/index.js');
+const { anyValue, unexpect } = require('./errUtil.js');
+
+const jsonProc = plugin.processors['.json'];
+const dummyPath = '/some/path/to/some.json';
+
 
 const fixtures = {
   valid: [
@@ -30,7 +38,7 @@ const fixtures = {
       options: [],
       errors: [
         {
-          message: "Invalid JSON: expected 'STRING' got }",
+          message: unexpect("'STRING'", '}'),
           line: 3,
           column: 14,
         },
@@ -44,7 +52,7 @@ const fixtures = {
       options: [],
       errors: [
         {
-          message: "Invalid JSON: expected 'STRING', 'NUMBER', 'NULL', 'TRUE', 'FALSE', '{', '[' got EOF",
+          message: unexpect(anyValue, 'EOF'),
           line: 1,
           column: 0,
         },
@@ -54,7 +62,7 @@ const fixtures = {
       code: '{',
       errors: [
         {
-          message: "Invalid JSON: expected 'STRING', '}' got EOF",
+          message: unexpect("'STRING', '}'", 'EOF'),
           line: 1,
           column: 0,
         },
@@ -68,7 +76,7 @@ const fixtures = {
       options: [],
       errors: [
         {
-          message: "Invalid JSON: expected 'STRING', 'NUMBER', 'NULL', 'TRUE', 'FALSE', '{', '[' got INVALID",
+          message: unexpect(anyValue, 'INVALID'),
           line: 1,
           column: 0,
         },
@@ -81,9 +89,9 @@ describe('Plugin', () => {
   describe('valid JSON', () => {
     fixtures.valid.forEach((obj) => {
       it('should pass', () => {
-        const preprocesssResult = plugin.processors['.json'].preprocess(obj.code, 'some/path/to/json');
+        const preprocesssResult = jsonProc.preprocess(obj.code, dummyPath);
         expect(preprocesssResult).to.be.an('array');
-        const result = plugin.processors['.json'].postprocess('foo', 'some/path/to/json');
+        const result = jsonProc.postprocess('foo', dummyPath);
         expect(result).to.be.eql([]);
       });
     });
@@ -91,8 +99,8 @@ describe('Plugin', () => {
   describe('invalid JSON', () => {
     fixtures.invalid.forEach((obj) => {
       it('should fail', () => {
-        plugin.processors['.json'].preprocess(obj.code, 'some/path/to/json');
-        const result = plugin.processors['.json'].postprocess('foo', 'some/path/to/json');
+        jsonProc.preprocess(obj.code, dummyPath);
+        const result = jsonProc.postprocess('foo', dummyPath);
         expect(result[0].message).to.be.equal(obj.errors[0].message);
         expect(result[0].line).to.be.equal(obj.errors[0].line);
         expect(result[0].column).to.be.equal(obj.errors[0].column);

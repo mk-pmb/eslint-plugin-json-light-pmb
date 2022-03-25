@@ -1,5 +1,5 @@
 { "name": "eslint-plugin-json-light-pmb",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "(2022 maintenance fork) Light ESLint plugin for JSON validating",
   "keywords": [
     "eslint",
