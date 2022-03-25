@@ -19,13 +19,19 @@ jobs:
 
         steps:
             -   uses: actions/checkout@v2
-            -   name: Use Node.js ${{ matrix.node-version }}
+            -   name: 'Use Node.js ${{ matrix.node-version }}'
                 uses: actions/setup-node@v1
                 with:
                     node-version: ${{ matrix.node-version }}
+
+            -   name: 'Help our linter rules find this plugin'
+                run: |
+                    mkdir --parents -- ../node_modules && \
+                    ln --symbolic --target-directory=../node_modules \
+                        -- "$GITHUB_WORKSPACE"
             -   run: npm install .
-            -   run: npm audit
             -   run: npm test
+            -   run: npm audit
 
 
 ...

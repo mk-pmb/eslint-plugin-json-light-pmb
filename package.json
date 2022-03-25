@@ -31,7 +31,7 @@
 
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha 'test/**/*.spec.js'"
+    "test": "elp && mocha 'test/**/*.spec.js'"
   },
   "eslintConfig": { "extends": "nodejs-pmb" },
 
@@ -44,6 +44,7 @@
     "eslint-config-nodejs-pmb": "^0.3.2",
     "eslint-plugin-mocha": "^10.0.3",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-pretty-pmb": "^1.0.5",
     "mocha": "^9.2.2"
   },
 
