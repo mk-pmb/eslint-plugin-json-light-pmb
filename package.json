@@ -1,14 +1,6 @@
 { "name": "eslint-plugin-json-light-pmb",
   "version": "1.0.4",
   "description": "(2022 maintenance fork) Light ESLint plugin for JSON validating",
-  "main": "lib/index.js",
-  "scripts": {
-    "test": "mocha 'test/**/*.spec.js'"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mk-pmb/eslint-plugin-json-light-pmb.git"
-  },
   "keywords": [
     "eslint",
     "eslintplugin",
@@ -17,19 +9,31 @@
     "eslint-plugin-json",
     "eslint-plugin-json-light"
   ],
+
   "author": {
     "name": "Locomote IP Pty Ltd",
     "email": "devs@locomote.com.au",
     "url": "http://www.locomote.com.au"
   },
-  "license": "ISC",
-  "contributors": [
-    "M.K. (https://github.com/mk-pmb)"
-  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk-pmb/eslint-plugin-json-light-pmb.git"
+  },
   "bugs": {
     "url": "https://github.com/mk-pmb/eslint-plugin-json-light-pmb/issues"
   },
   "homepage": "https://github.com/mk-pmb/eslint-plugin-json-light-pmb#readme",
+  "contributors": [
+    "M.K. (https://github.com/mk-pmb)"
+  ],
+
+  "private": false, "license": "ISC",
+
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha 'test/**/*.spec.js'"
+  },
+
   "dependencies": {
     "jsonlint-mod": "^1.7.6"
   },
@@ -41,6 +45,8 @@
     "eslint-plugin-mocha": "^10.0.3",
     "mocha": "^9.2.2"
   },
+
+
 
   "npm vs. BOM = Unexpected token": "-*- coding: UTF-8 -*-"
 }
